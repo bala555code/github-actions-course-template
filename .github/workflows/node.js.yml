@@ -37,7 +37,13 @@ jobs:
         cache: 'npm'
     - name: npm install and test
       run: |
-        npm install 
+        npm install -g npm
+        rm package-lock.json node_modules
+        npm install
+        npm outdated
+        npm update
+        npm audit fix --force
+        npm run build
         npm test -- -u
       
       env:
