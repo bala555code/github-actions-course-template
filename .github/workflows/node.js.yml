@@ -38,8 +38,6 @@ jobs:
     - name: npm install and test
       run: |
         npm install -g npm
-        npm update
-        npm run build
         npm test -- -u
       
       env:
