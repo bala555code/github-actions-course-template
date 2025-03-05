@@ -38,10 +38,7 @@ jobs:
     - name: npm install and test
       run: |
         npm install -g npm
-        npm install
-        npm outdated
         npm update
-        npm audit fix --force
         npm run build
         npm test -- -u
       
