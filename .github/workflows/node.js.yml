@@ -15,10 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      - name: npm install and build webpack
+      - name: Install Dependencies and Build Webpack
         run: 
           npm install
           npm run build
+      - name: Upload Webpack Build Artifacts
       - uses: actions/upload-artifact@v4
         with: 
           name: webpack-artificats
@@ -37,9 +38,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Download Webpack Build Artifacts
     - uses: actions/download-artifact@v4
       with: 
-          name: webpack-artificats 
+          name: webpack-artificats
           path: public
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
