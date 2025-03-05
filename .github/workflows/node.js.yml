@@ -49,6 +49,7 @@ jobs:
       run: |
         npm install
         npm update
+        npm run build
         npm test -- -u
            
       env:
