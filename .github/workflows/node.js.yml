@@ -48,7 +48,10 @@ jobs:
         cache: 'npm'
     - name: npm install and test
       run: |
+        npm install -g npm
+        npm install
         npm install --save-dev @babel/preset-env
+        npm update
         npm test -- -u
       
       env:
