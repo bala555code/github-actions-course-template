@@ -24,7 +24,6 @@ jobs:
           name: webpack-artificats
           path: public/
   #Upload the artifacts from workflow allowing data between jobs and store data. . 
-
   test:
     runs-on: ubuntu-latest
     needs: build
