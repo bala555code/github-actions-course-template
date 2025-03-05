@@ -19,10 +19,12 @@ jobs:
         run: 
           npm install
           npm run build
-      - uses: actions/upload-artifacts@master
+      - uses: actions/upload-artifact@master
         with: 
           name: webpack artificats
           path: public/
+  #Upload the artifacts from workflow allowing data between jobs and store data. . 
+
   test:
     runs-on: ubuntu-latest
     needs: build
@@ -35,7 +37,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/download-artifacts@master
+    - uses: actions/download-artifact@master
       with: 
           name: webpack artificats
           path: public
