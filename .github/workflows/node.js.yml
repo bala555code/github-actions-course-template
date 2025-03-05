@@ -42,10 +42,9 @@ jobs:
           name: webpack artificats
           path: public
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - name: npm install and test
       run: |
         npm install -g npm
