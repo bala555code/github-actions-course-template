@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -8,7 +8,8 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../public')
-  }
-}
+    path: path.resolve(__dirname, 'public'),  // Ensure output goes to ./public
+    filename: 'main.js'  // The output file should be main.js
+  },
+  mode: 'development',  // Or 'production' depending on your setup
+};
