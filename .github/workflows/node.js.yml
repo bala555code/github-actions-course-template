@@ -19,9 +19,9 @@ jobs:
         run: 
           npm install
           npm run build
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v3
         with: 
-          name: webpack artificats
+          name: webpack-artificats
           path: public/
   #Upload the artifacts from workflow allowing data between jobs and store data. . 
 
@@ -37,9 +37,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/download-artifact@master
+    - uses: actions/download-artifact@v3
       with: 
-          name: webpack artificats
+          name: webpack-artificats 
           path: public
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
